@@ -3,6 +3,22 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
+
+	/* Click function for names */
+	$(".listen").click(function(event) {
+		// Prevent page from reloading
+		event.preventDefault();
+
+		// Print onto console
+		console.log("My name was clicked!");
+		// Get name
+		var name = $(this).text();
+		console.log(name);
+		// Get different name
+		var emna = anagrammedName( name );
+		// Change name
+		$(this).text( emna );
+	});
 })
 
 /*
